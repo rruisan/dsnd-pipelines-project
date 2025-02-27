@@ -1,55 +1,82 @@
-# README Template
+# Data Science Pipeline Project
 
-Below is a template provided for use when building your README file for students.
+## Overview
 
-# Project Title
+This project implements a comprehensive data science pipeline for classifying customer reviews. It encompasses all stages of a typical data science workflow—from data ingestion and exploratory analysis to preprocessing, modeling, evaluation, and hyperparameter tuning. Built with industry-standard tools, this pipeline demonstrates best practices in both software engineering and data science.
 
-Project description goes here.
+## Features
 
-## Getting Started
+- **Data Ingestion & Exploration:**  
+  - Reads the dataset from a CSV file.
+  - Performs detailed exploratory data analysis (EDA) to assess data distribution, missing values, and class imbalance.
+  
+- **Preprocessing & Feature Engineering:**  
+  - Utilizes a custom spaCy-based transformer for text preprocessing (lemmatization and stopword removal).
+  - Implements separate pipelines for numerical, categorical, and text features using scikit-learn’s `Pipeline` and `ColumnTransformer`.
+  
+- **Modeling:**  
+  - Integrates a `RandomForestClassifier` within a unified pipeline.
+  - Conducts hyperparameter tuning with GridSearchCV to optimize model performance.
+  
+- **Visualization & Evaluation:**  
+  - Generates comprehensive visualizations, including plots of feature distributions, class imbalances, and confusion matrices.
+  - Creates Word Clouds to visualize key terms in review texts.
+  - Provides detailed classification reports and accuracy metrics.
 
-Instructions for how to get a copy of the project running on your local machine.
+## Technologies Used
 
-### Dependencies
+- **Python 3.x**
+- **Pandas & NumPy:** For data manipulation and numerical analysis.
+- **Matplotlib & Seaborn:** For creating visualizations.
+- **spaCy:** For advanced natural language processing.
+- **WordCloud:** For text data visualization.
+- **scikit-learn:** For building machine learning models and pipelines.
+- **Jupyter Notebook / Google Colab:** For interactive development and experimentation.
 
-```
-Examples here
-```
+## Installation and Setup
 
-### Installation
+1. **Clone the Repository:**
 
-Step by step explanation of how to get a dev environment running.
+    ```bash
+    git clone https://github.com/rruisan/dsnd-pipelines-project
+    cd ds-pipeline-project
+    ```
+2. **Create a Virtual Environment (Recommended):**
+    Ensure that you have a requirements.txt file listing all necessary packages. Then, run:
+    ```bash
+    python -m venv env
+    source env/bin/activate  # For Windows: env\Scripts\activate
+    ```
 
-List out the steps
+3. **Install Dependencies:**
+    Ensure that you have a requirements.txt file listing all necessary packages. Then, run:
+    
+    ```bash
+    pip install -r requirements.txt
+    ```
 
-```
-Give an example here
-```
+4. **Download the spaCy English Model:**
+    ```bash
+    python -m spacy download en_core_web_sm
+    ```
 
-## Testing
 
-Explain the steps needed to run any automated tests
+## Usage
 
-### Break Down Tests
+- **Interactive Exploration:**
+  
+  Open the notebook.ipynb file in Jupyter Notebook or Google Colab to explore the pipeline interactively.
 
-Explain what each test does and why
-
-```
-Examples here
-```
-
-## Project Instructions
-
-This section should contain all the student deliverables for this project.
-
-## Built With
-
-* [Item1](www.item1.com) - Description of item
-* [Item2](www.item2.com) - Description of item
-* [Item3](www.item3.com) - Description of item
-
-Include all items used to build project.
+- **Running as a Script:**
+  
+    If preferred, convert the notebook to a Python script:
+    ```bash
+    jupyter nbconvert --to script notebook.ipynb
+    python notebook.py
+    ```
 
 ## License
 
-[License](LICENSE.txt)
+See the LICENSE.txt file for details.
+
+
